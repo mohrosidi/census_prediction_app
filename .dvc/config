@@ -1,0 +1,4 @@
+[core]
+    remote = mlopsudacity
+['remote "mlopsudacity"']
+    url = s3://mlopsudacity/artifact
