@@ -1,0 +1,126 @@
+`workclass` category
+`workclass` category -> precision: 0.779, recall: 0.657, fbeta: 0.713, numb.rows: 1298 -- State-gov.
+`workclass` category -> precision: 0.715, recall: 0.523, fbeta: 0.604, numb.rows: 2540 -- Self-emp-not-inc.
+`workclass` category -> precision: 0.828, recall: 0.485, fbeta: 0.611, numb.rows: 22673 -- Private.
+`workclass` category -> precision: 0.845, recall: 0.469, fbeta: 0.603, numb.rows: 960 -- Federal-gov.
+`workclass` category -> precision: 0.759, recall: 0.572, fbeta: 0.652, numb.rows: 2093 -- Local-gov.
+`workclass` category -> precision: 0.792, recall: 0.319, fbeta: 0.455, numb.rows: 1836 -- ?.
+`workclass` category -> precision: 0.863, recall: 0.625, fbeta: 0.725, numb.rows: 1116 -- Self-emp-inc.
+`workclass` category -> precision: 1.000, recall: 1.000, fbeta: 1.000, numb.rows: 14 -- Without-pay.
+`workclass` category -> precision: 1.000, recall: 1.000, fbeta: 1.000, numb.rows: 7 -- Never-worked.
+
+
+`education` category
+`education` category -> precision: 0.737, recall: 0.810, fbeta: 0.772, numb.rows: 5353 -- Bachelors.
+`education` category -> precision: 0.977, recall: 0.175, fbeta: 0.297, numb.rows: 10494 -- HS-grad.
+`education` category -> precision: 1.000, recall: 0.233, fbeta: 0.378, numb.rows: 1175 -- 11th.
+`education` category -> precision: 0.810, recall: 0.848, fbeta: 0.828, numb.rows: 1722 -- Masters.
+`education` category -> precision: 1.000, recall: 0.074, fbeta: 0.138, numb.rows: 514 -- 9th.
+`education` category -> precision: 0.983, recall: 0.206, fbeta: 0.340, numb.rows: 7282 -- Some-college.
+`education` category -> precision: 1.000, recall: 0.230, fbeta: 0.374, numb.rows: 1067 -- Assoc-acdm.
+`education` category -> precision: 0.975, recall: 0.216, fbeta: 0.354, numb.rows: 1382 -- Assoc-voc.
+`education` category -> precision: 0.833, recall: 0.125, fbeta: 0.217, numb.rows: 645 -- 7th-8th.
+`education` category -> precision: 0.854, recall: 0.820, fbeta: 0.837, numb.rows: 413 -- Doctorate.
+`education` category -> precision: 0.880, recall: 0.868, fbeta: 0.874, numb.rows: 576 -- Prof-school.
+`education` category -> precision: 1.000, recall: 0.312, fbeta: 0.476, numb.rows: 332 -- 5th-6th.
+`education` category -> precision: 1.000, recall: 0.177, fbeta: 0.301, numb.rows: 933 -- 10th.
+`education` category -> precision: 1.000, recall: 0.167, fbeta: 0.286, numb.rows: 166 -- 1st-4th.
+`education` category -> precision: 1.000, recall: 1.000, fbeta: 1.000, numb.rows: 50 -- Preschool.
+`education` category -> precision: 1.000, recall: 0.242, fbeta: 0.390, numb.rows: 433 -- 12th.
+
+
+`marital_status` category
+`marital_status` category -> precision: 1.000, recall: 0.232, fbeta: 0.377, numb.rows: 10667 -- Never-married.
+`marital_status` category -> precision: 0.800, recall: 0.561, fbeta: 0.660, numb.rows: 14970 -- Married-civ-spouse.
+`marital_status` category -> precision: 1.000, recall: 0.190, fbeta: 0.319, numb.rows: 4441 -- Divorced.
+`marital_status` category -> precision: 1.000, recall: 0.206, fbeta: 0.341, numb.rows: 418 -- Married-spouse-absent.
+`marital_status` category -> precision: 1.000, recall: 0.182, fbeta: 0.308, numb.rows: 1025 -- Separated.
+`marital_status` category -> precision: 1.000, recall: 0.100, fbeta: 0.182, numb.rows: 23 -- Married-AF-spouse.
+`marital_status` category -> precision: 1.000, recall: 0.188, fbeta: 0.317, numb.rows: 993 -- Widowed.
+
+
+`occupation` category
+`occupation` category -> precision: 0.754, recall: 0.314, fbeta: 0.443, numb.rows: 3768 -- Adm-clerical.
+`occupation` category -> precision: 0.852, recall: 0.622, fbeta: 0.719, numb.rows: 4065 -- Exec-managerial.
+`occupation` category -> precision: 0.846, recall: 0.256, fbeta: 0.393, numb.rows: 1369 -- Handlers-cleaners.
+`occupation` category -> precision: 0.798, recall: 0.761, fbeta: 0.779, numb.rows: 4136 -- Prof-specialty.
+`occupation` category -> precision: 1.000, recall: 0.117, fbeta: 0.209, numb.rows: 3291 -- Other-service.
+`occupation` category -> precision: 0.785, recall: 0.521, fbeta: 0.626, numb.rows: 3650 -- Sales.
+`occupation` category -> precision: 0.792, recall: 0.263, fbeta: 0.395, numb.rows: 4094 -- Craft-repair.
+`occupation` category -> precision: 0.824, recall: 0.219, fbeta: 0.346, numb.rows: 1597 -- Transport-moving.
+`occupation` category -> precision: 0.616, recall: 0.391, fbeta: 0.479, numb.rows: 992 -- Farming-fishing.
+`occupation` category -> precision: 0.862, recall: 0.201, fbeta: 0.326, numb.rows: 2000 -- Machine-op-inspct.
+`occupation` category -> precision: 0.797, recall: 0.360, fbeta: 0.496, numb.rows: 927 -- Tech-support.
+`occupation` category -> precision: 0.792, recall: 0.319, fbeta: 0.455, numb.rows: 1843 -- ?.
+`occupation` category -> precision: 0.807, recall: 0.336, fbeta: 0.475, numb.rows: 649 -- Protective-serv.
+`occupation` category -> precision: 1.000, recall: 1.000, fbeta: 1.000, numb.rows: 9 -- Armed-Forces.
+`occupation` category -> precision: 1.000, recall: 1.000, fbeta: 1.000, numb.rows: 147 -- Priv-house-serv.
+
+
+`relationship` category
+`relationship` category -> precision: 1.000, recall: 0.227, fbeta: 0.370, numb.rows: 8292 -- Not-in-family.
+`relationship` category -> precision: 0.794, recall: 0.584, fbeta: 0.673, numb.rows: 13187 -- Husband.
+`relationship` category -> precision: 0.873, recall: 0.396, fbeta: 0.545, numb.rows: 1568 -- Wife.
+`relationship` category -> precision: 1.000, recall: 0.119, fbeta: 0.213, numb.rows: 5064 -- Own-child.
+`relationship` category -> precision: 1.000, recall: 0.165, fbeta: 0.283, numb.rows: 3445 -- Unmarried.
+`relationship` category -> precision: 1.000, recall: 0.162, fbeta: 0.279, numb.rows: 981 -- Other-relative.
+
+
+`race` category
+`race` category -> precision: 0.814, recall: 0.512, fbeta: 0.628, numb.rows: 27795 -- White.
+`race` category -> precision: 0.825, recall: 0.403, fbeta: 0.542, numb.rows: 3122 -- Black.
+`race` category -> precision: 0.715, recall: 0.609, fbeta: 0.658, numb.rows: 1038 -- Asian-Pac-Islander.
+`race` category -> precision: 0.938, recall: 0.417, fbeta: 0.577, numb.rows: 311 -- Amer-Indian-Eskimo.
+`race` category -> precision: 0.632, recall: 0.480, fbeta: 0.545, numb.rows: 271 -- Other.
+
+
+`sex` category
+`sex` category -> precision: 0.801, recall: 0.541, fbeta: 0.646, numb.rows: 21775 -- Male.
+`sex` category -> precision: 0.900, recall: 0.330, fbeta: 0.483, numb.rows: 10762 -- Female.
+
+
+`native_country` category
+`native_country` category -> precision: 0.817, recall: 0.504, fbeta: 0.623, numb.rows: 29153 -- United-States.
+`native_country` category -> precision: 0.923, recall: 0.480, fbeta: 0.632, numb.rows: 95 -- Cuba.
+`native_country` category -> precision: 0.500, recall: 0.200, fbeta: 0.286, numb.rows: 81 -- Jamaica.
+`native_country` category -> precision: 0.625, recall: 0.750, fbeta: 0.682, numb.rows: 100 -- India.
+`native_country` category -> precision: 0.752, recall: 0.644, fbeta: 0.694, numb.rows: 582 -- ?.
+`native_country` category -> precision: 0.846, recall: 0.333, fbeta: 0.478, numb.rows: 639 -- Mexico.
+`native_country` category -> precision: 0.474, recall: 0.562, fbeta: 0.514, numb.rows: 80 -- South.
+`native_country` category -> precision: 0.750, recall: 0.500, fbeta: 0.600, numb.rows: 114 -- Puerto-Rico.
+`native_country` category -> precision: 1.000, recall: 1.000, fbeta: 1.000, numb.rows: 13 -- Honduras.
+`native_country` category -> precision: 0.750, recall: 0.600, fbeta: 0.667, numb.rows: 90 -- England.
+`native_country` category -> precision: 0.800, recall: 0.513, fbeta: 0.625, numb.rows: 121 -- Canada.
+`native_country` category -> precision: 0.800, recall: 0.455, fbeta: 0.580, numb.rows: 137 -- Germany.
+`native_country` category -> precision: 0.737, recall: 0.778, fbeta: 0.757, numb.rows: 43 -- Iran.
+`native_country` category -> precision: 0.826, recall: 0.623, fbeta: 0.710, numb.rows: 198 -- Philippines.
+`native_country` category -> precision: 0.923, recall: 0.480, fbeta: 0.632, numb.rows: 73 -- Italy.
+`native_country` category -> precision: 0.571, recall: 0.333, fbeta: 0.421, numb.rows: 60 -- Poland.
+`native_country` category -> precision: 0.333, recall: 0.500, fbeta: 0.400, numb.rows: 59 -- Columbia.
+`native_country` category -> precision: 1.000, recall: 0.286, fbeta: 0.444, numb.rows: 19 -- Cambodia.
+`native_country` category -> precision: 1.000, recall: 0.333, fbeta: 0.500, numb.rows: 18 -- Thailand.
+`native_country` category -> precision: 0.500, recall: 0.500, fbeta: 0.500, numb.rows: 28 -- Ecuador.
+`native_country` category -> precision: 1.000, recall: 0.500, fbeta: 0.667, numb.rows: 18 -- Laos.
+`native_country` category -> precision: 0.762, recall: 0.800, fbeta: 0.780, numb.rows: 51 -- Taiwan.
+`native_country` category -> precision: 0.500, recall: 0.250, fbeta: 0.333, numb.rows: 44 -- Haiti.
+`native_country` category -> precision: 1.000, recall: 0.250, fbeta: 0.400, numb.rows: 37 -- Portugal.
+`native_country` category -> precision: 1.000, recall: 0.000, fbeta: 0.000, numb.rows: 70 -- Dominican-Republic.
+`native_country` category -> precision: 1.000, recall: 0.667, fbeta: 0.800, numb.rows: 106 -- El-Salvador.
+`native_country` category -> precision: 0.714, recall: 0.417, fbeta: 0.526, numb.rows: 29 -- France.
+`native_country` category -> precision: 1.000, recall: 0.333, fbeta: 0.500, numb.rows: 62 -- Guatemala.
+`native_country` category -> precision: 0.727, recall: 0.800, fbeta: 0.762, numb.rows: 75 -- China.
+`native_country` category -> precision: 0.727, recall: 0.667, fbeta: 0.696, numb.rows: 62 -- Japan.
+`native_country` category -> precision: 0.750, recall: 0.500, fbeta: 0.600, numb.rows: 16 -- Yugoslavia.
+`native_country` category -> precision: 1.000, recall: 0.500, fbeta: 0.667, numb.rows: 31 -- Peru.
+`native_country` category -> precision: 1.000, recall: 1.000, fbeta: 1.000, numb.rows: 14 -- Outlying-US(Guam-USVI-etc).
+`native_country` category -> precision: 1.000, recall: 0.333, fbeta: 0.500, numb.rows: 12 -- Scotland.
+`native_country` category -> precision: 1.000, recall: 0.500, fbeta: 0.667, numb.rows: 19 -- Trinadad&Tobago.
+`native_country` category -> precision: 0.714, recall: 0.625, fbeta: 0.667, numb.rows: 29 -- Greece.
+`native_country` category -> precision: 1.000, recall: 0.000, fbeta: 0.000, numb.rows: 34 -- Nicaragua.
+`native_country` category -> precision: 0.400, recall: 0.400, fbeta: 0.400, numb.rows: 67 -- Vietnam.
+`native_country` category -> precision: 0.800, recall: 0.667, fbeta: 0.727, numb.rows: 20 -- Hong.
+`native_country` category -> precision: 1.000, recall: 0.600, fbeta: 0.750, numb.rows: 24 -- Ireland.
+`native_country` category -> precision: 1.000, recall: 0.333, fbeta: 0.500, numb.rows: 13 -- Hungary.
+`native_country` category -> precision: 1.000, recall: 1.000, fbeta: 1.000, numb.rows: 1 -- Holand-Netherlands.
+
+

@@ -1,10 +1,60 @@
+"""
+Module to processed the data
+
+Author : Moh. Rosidi
+Date   : August 2021
+"""
+
+import os
 import numpy as np
+import pandas as pd
 from sklearn.preprocessing import LabelBinarizer, OneHotEncoder
 
 
+def preprocess_data(
+        df: pd.DataFrame,
+        dest_path: str = None,
+        dest_filename: str = 'clean_census.csv'):
+    """Preprocess the data used in machine learning pipelines
+
+    Remove space between columns and change the '-' to '_' in column
+    names
+
+    Inputs
+    ------
+    df : pd.DataFrame
+        Dataframe containing the features and label`
+    dest_path: str
+        location where the result will be save
+    dest_filename : str
+        Name of the file output
+    
+    Returns
+    -------
+    new_df : pd.DataFrame
+        Processed data.
+    """
+    new_df = df.drop_duplicates()
+    new_df.columns = [col.strip().replace('-', '_') for col in new_df.columns]
+
+    # strip whitespaces from column values
+    for col in new_df.columns:
+        if new_df[col].dtype == object and isinstance(new_df.iloc[0][col], str):
+            new_df[col] = new_df[col].str.strip()
+
+    if dest_path is not None:
+        # save df as csv
+        new_df.to_csv(os.path.join(dest_path, dest_filename), index=False)
+    return new_df
+
+
 def process_data(
-    X, categorical_features=[], label=None, training=True, encoder=None, lb=None
-):
+        X,
+        categorical_features=[],
+        label=None,
+        training=True,
+        encoder=None,
+        lb=None):
     """ Process the data used in the machine learning pipeline.
 
     Processes the data using one hot encoding for the categorical features and a
@@ -60,6 +110,7 @@ def process_data(
         y = lb.fit_transform(y.values).ravel()
     else:
         X_categorical = encoder.transform(X_categorical)
+        # print('X_categorical after', X_categorical, X_categorical.shape)
         try:
             y = lb.transform(y.values).ravel()
         # Catch the case where y is None because we're doing inference.

@@ -1,0 +1,128 @@
+2021-08-22 01:25:26,682 - root - INFO - Model parameters: {'n_estimators': 100, 'criterion': 'entropy', 'max_depth': 7, 'min_samples_split': 2, 'min_samples_leaf': 1, 'bootstrap': True, 'oob_score': False, 'n_jobs': -1, 'max_features': 10}
+2021-08-22 01:25:28,370 - root - INFO - Overall model predictions - precision: 0.8022705771050141, recall: 0.529008109794136, fbeta: 0.637593984962406
+2021-08-22 01:25:29,937 - slice_metrics - INFO - `workclass` category
+2021-08-22 01:25:29,937 - slice_metrics - INFO - `workclass` category -> precision: 0.779, recall: 0.657, fbeta: 0.713, numb.rows: 1298 -- State-gov.
+2021-08-22 01:25:29,937 - slice_metrics - INFO - `workclass` category -> precision: 0.715, recall: 0.523, fbeta: 0.604, numb.rows: 2540 -- Self-emp-not-inc.
+2021-08-22 01:25:29,937 - slice_metrics - INFO - `workclass` category -> precision: 0.828, recall: 0.485, fbeta: 0.611, numb.rows: 22673 -- Private.
+2021-08-22 01:25:29,937 - slice_metrics - INFO - `workclass` category -> precision: 0.845, recall: 0.469, fbeta: 0.603, numb.rows: 960 -- Federal-gov.
+2021-08-22 01:25:29,937 - slice_metrics - INFO - `workclass` category -> precision: 0.759, recall: 0.572, fbeta: 0.652, numb.rows: 2093 -- Local-gov.
+2021-08-22 01:25:29,938 - slice_metrics - INFO - `workclass` category -> precision: 0.792, recall: 0.319, fbeta: 0.455, numb.rows: 1836 -- ?.
+2021-08-22 01:25:29,938 - slice_metrics - INFO - `workclass` category -> precision: 0.863, recall: 0.625, fbeta: 0.725, numb.rows: 1116 -- Self-emp-inc.
+2021-08-22 01:25:29,938 - slice_metrics - INFO - `workclass` category -> precision: 1.000, recall: 1.000, fbeta: 1.000, numb.rows: 14 -- Without-pay.
+2021-08-22 01:25:29,938 - slice_metrics - INFO - `workclass` category -> precision: 1.000, recall: 1.000, fbeta: 1.000, numb.rows: 7 -- Never-worked.
+2021-08-22 01:25:29,938 - slice_metrics - INFO - 
+
+2021-08-22 01:25:31,967 - slice_metrics - INFO - `education` category
+2021-08-22 01:25:31,967 - slice_metrics - INFO - `education` category -> precision: 0.737, recall: 0.810, fbeta: 0.772, numb.rows: 5353 -- Bachelors.
+2021-08-22 01:25:31,967 - slice_metrics - INFO - `education` category -> precision: 0.977, recall: 0.175, fbeta: 0.297, numb.rows: 10494 -- HS-grad.
+2021-08-22 01:25:31,967 - slice_metrics - INFO - `education` category -> precision: 1.000, recall: 0.233, fbeta: 0.378, numb.rows: 1175 -- 11th.
+2021-08-22 01:25:31,967 - slice_metrics - INFO - `education` category -> precision: 0.810, recall: 0.848, fbeta: 0.828, numb.rows: 1722 -- Masters.
+2021-08-22 01:25:31,967 - slice_metrics - INFO - `education` category -> precision: 1.000, recall: 0.074, fbeta: 0.138, numb.rows: 514 -- 9th.
+2021-08-22 01:25:31,967 - slice_metrics - INFO - `education` category -> precision: 0.983, recall: 0.206, fbeta: 0.340, numb.rows: 7282 -- Some-college.
+2021-08-22 01:25:31,968 - slice_metrics - INFO - `education` category -> precision: 1.000, recall: 0.230, fbeta: 0.374, numb.rows: 1067 -- Assoc-acdm.
+2021-08-22 01:25:31,968 - slice_metrics - INFO - `education` category -> precision: 0.975, recall: 0.216, fbeta: 0.354, numb.rows: 1382 -- Assoc-voc.
+2021-08-22 01:25:31,968 - slice_metrics - INFO - `education` category -> precision: 0.833, recall: 0.125, fbeta: 0.217, numb.rows: 645 -- 7th-8th.
+2021-08-22 01:25:31,968 - slice_metrics - INFO - `education` category -> precision: 0.854, recall: 0.820, fbeta: 0.837, numb.rows: 413 -- Doctorate.
+2021-08-22 01:25:31,968 - slice_metrics - INFO - `education` category -> precision: 0.880, recall: 0.868, fbeta: 0.874, numb.rows: 576 -- Prof-school.
+2021-08-22 01:25:31,968 - slice_metrics - INFO - `education` category -> precision: 1.000, recall: 0.312, fbeta: 0.476, numb.rows: 332 -- 5th-6th.
+2021-08-22 01:25:31,968 - slice_metrics - INFO - `education` category -> precision: 1.000, recall: 0.177, fbeta: 0.301, numb.rows: 933 -- 10th.
+2021-08-22 01:25:31,968 - slice_metrics - INFO - `education` category -> precision: 1.000, recall: 0.167, fbeta: 0.286, numb.rows: 166 -- 1st-4th.
+2021-08-22 01:25:31,968 - slice_metrics - INFO - `education` category -> precision: 1.000, recall: 1.000, fbeta: 1.000, numb.rows: 50 -- Preschool.
+2021-08-22 01:25:31,968 - slice_metrics - INFO - `education` category -> precision: 1.000, recall: 0.242, fbeta: 0.390, numb.rows: 433 -- 12th.
+2021-08-22 01:25:31,968 - slice_metrics - INFO - 
+
+2021-08-22 01:25:33,093 - slice_metrics - INFO - `marital_status` category
+2021-08-22 01:25:33,093 - slice_metrics - INFO - `marital_status` category -> precision: 1.000, recall: 0.232, fbeta: 0.377, numb.rows: 10667 -- Never-married.
+2021-08-22 01:25:33,093 - slice_metrics - INFO - `marital_status` category -> precision: 0.800, recall: 0.561, fbeta: 0.660, numb.rows: 14970 -- Married-civ-spouse.
+2021-08-22 01:25:33,093 - slice_metrics - INFO - `marital_status` category -> precision: 1.000, recall: 0.190, fbeta: 0.319, numb.rows: 4441 -- Divorced.
+2021-08-22 01:25:33,093 - slice_metrics - INFO - `marital_status` category -> precision: 1.000, recall: 0.206, fbeta: 0.341, numb.rows: 418 -- Married-spouse-absent.
+2021-08-22 01:25:33,094 - slice_metrics - INFO - `marital_status` category -> precision: 1.000, recall: 0.182, fbeta: 0.308, numb.rows: 1025 -- Separated.
+2021-08-22 01:25:33,094 - slice_metrics - INFO - `marital_status` category -> precision: 1.000, recall: 0.100, fbeta: 0.182, numb.rows: 23 -- Married-AF-spouse.
+2021-08-22 01:25:33,094 - slice_metrics - INFO - `marital_status` category -> precision: 1.000, recall: 0.188, fbeta: 0.317, numb.rows: 993 -- Widowed.
+2021-08-22 01:25:33,094 - slice_metrics - INFO - 
+
+2021-08-22 01:25:35,281 - slice_metrics - INFO - `occupation` category
+2021-08-22 01:25:35,281 - slice_metrics - INFO - `occupation` category -> precision: 0.754, recall: 0.314, fbeta: 0.443, numb.rows: 3768 -- Adm-clerical.
+2021-08-22 01:25:35,282 - slice_metrics - INFO - `occupation` category -> precision: 0.852, recall: 0.622, fbeta: 0.719, numb.rows: 4065 -- Exec-managerial.
+2021-08-22 01:25:35,282 - slice_metrics - INFO - `occupation` category -> precision: 0.846, recall: 0.256, fbeta: 0.393, numb.rows: 1369 -- Handlers-cleaners.
+2021-08-22 01:25:35,282 - slice_metrics - INFO - `occupation` category -> precision: 0.798, recall: 0.761, fbeta: 0.779, numb.rows: 4136 -- Prof-specialty.
+2021-08-22 01:25:35,282 - slice_metrics - INFO - `occupation` category -> precision: 1.000, recall: 0.117, fbeta: 0.209, numb.rows: 3291 -- Other-service.
+2021-08-22 01:25:35,282 - slice_metrics - INFO - `occupation` category -> precision: 0.785, recall: 0.521, fbeta: 0.626, numb.rows: 3650 -- Sales.
+2021-08-22 01:25:35,282 - slice_metrics - INFO - `occupation` category -> precision: 0.792, recall: 0.263, fbeta: 0.395, numb.rows: 4094 -- Craft-repair.
+2021-08-22 01:25:35,282 - slice_metrics - INFO - `occupation` category -> precision: 0.824, recall: 0.219, fbeta: 0.346, numb.rows: 1597 -- Transport-moving.
+2021-08-22 01:25:35,282 - slice_metrics - INFO - `occupation` category -> precision: 0.616, recall: 0.391, fbeta: 0.479, numb.rows: 992 -- Farming-fishing.
+2021-08-22 01:25:35,282 - slice_metrics - INFO - `occupation` category -> precision: 0.862, recall: 0.201, fbeta: 0.326, numb.rows: 2000 -- Machine-op-inspct.
+2021-08-22 01:25:35,282 - slice_metrics - INFO - `occupation` category -> precision: 0.797, recall: 0.360, fbeta: 0.496, numb.rows: 927 -- Tech-support.
+2021-08-22 01:25:35,283 - slice_metrics - INFO - `occupation` category -> precision: 0.792, recall: 0.319, fbeta: 0.455, numb.rows: 1843 -- ?.
+2021-08-22 01:25:35,283 - slice_metrics - INFO - `occupation` category -> precision: 0.807, recall: 0.336, fbeta: 0.475, numb.rows: 649 -- Protective-serv.
+2021-08-22 01:25:35,283 - slice_metrics - INFO - `occupation` category -> precision: 1.000, recall: 1.000, fbeta: 1.000, numb.rows: 9 -- Armed-Forces.
+2021-08-22 01:25:35,283 - slice_metrics - INFO - `occupation` category -> precision: 1.000, recall: 1.000, fbeta: 1.000, numb.rows: 147 -- Priv-house-serv.
+2021-08-22 01:25:35,283 - slice_metrics - INFO - 
+
+2021-08-22 01:25:36,445 - slice_metrics - INFO - `relationship` category
+2021-08-22 01:25:36,445 - slice_metrics - INFO - `relationship` category -> precision: 1.000, recall: 0.227, fbeta: 0.370, numb.rows: 8292 -- Not-in-family.
+2021-08-22 01:25:36,445 - slice_metrics - INFO - `relationship` category -> precision: 0.794, recall: 0.584, fbeta: 0.673, numb.rows: 13187 -- Husband.
+2021-08-22 01:25:36,445 - slice_metrics - INFO - `relationship` category -> precision: 0.873, recall: 0.396, fbeta: 0.545, numb.rows: 1568 -- Wife.
+2021-08-22 01:25:36,445 - slice_metrics - INFO - `relationship` category -> precision: 1.000, recall: 0.119, fbeta: 0.213, numb.rows: 5064 -- Own-child.
+2021-08-22 01:25:36,446 - slice_metrics - INFO - `relationship` category -> precision: 1.000, recall: 0.165, fbeta: 0.283, numb.rows: 3445 -- Unmarried.
+2021-08-22 01:25:36,446 - slice_metrics - INFO - `relationship` category -> precision: 1.000, recall: 0.162, fbeta: 0.279, numb.rows: 981 -- Other-relative.
+2021-08-22 01:25:36,446 - slice_metrics - INFO - 
+
+2021-08-22 01:25:37,525 - slice_metrics - INFO - `race` category
+2021-08-22 01:25:37,526 - slice_metrics - INFO - `race` category -> precision: 0.814, recall: 0.512, fbeta: 0.628, numb.rows: 27795 -- White.
+2021-08-22 01:25:37,526 - slice_metrics - INFO - `race` category -> precision: 0.825, recall: 0.403, fbeta: 0.542, numb.rows: 3122 -- Black.
+2021-08-22 01:25:37,526 - slice_metrics - INFO - `race` category -> precision: 0.715, recall: 0.609, fbeta: 0.658, numb.rows: 1038 -- Asian-Pac-Islander.
+2021-08-22 01:25:37,526 - slice_metrics - INFO - `race` category -> precision: 0.938, recall: 0.417, fbeta: 0.577, numb.rows: 311 -- Amer-Indian-Eskimo.
+2021-08-22 01:25:37,526 - slice_metrics - INFO - `race` category -> precision: 0.632, recall: 0.480, fbeta: 0.545, numb.rows: 271 -- Other.
+2021-08-22 01:25:37,526 - slice_metrics - INFO - 
+
+2021-08-22 01:25:38,170 - slice_metrics - INFO - `sex` category
+2021-08-22 01:25:38,170 - slice_metrics - INFO - `sex` category -> precision: 0.801, recall: 0.541, fbeta: 0.646, numb.rows: 21775 -- Male.
+2021-08-22 01:25:38,171 - slice_metrics - INFO - `sex` category -> precision: 0.900, recall: 0.330, fbeta: 0.483, numb.rows: 10762 -- Female.
+2021-08-22 01:25:38,171 - slice_metrics - INFO - 
+
+2021-08-22 01:25:41,285 - slice_metrics - INFO - `native_country` category
+2021-08-22 01:25:41,285 - slice_metrics - INFO - `native_country` category -> precision: 0.817, recall: 0.504, fbeta: 0.623, numb.rows: 29153 -- United-States.
+2021-08-22 01:25:41,285 - slice_metrics - INFO - `native_country` category -> precision: 0.923, recall: 0.480, fbeta: 0.632, numb.rows: 95 -- Cuba.
+2021-08-22 01:25:41,285 - slice_metrics - INFO - `native_country` category -> precision: 0.500, recall: 0.200, fbeta: 0.286, numb.rows: 81 -- Jamaica.
+2021-08-22 01:25:41,285 - slice_metrics - INFO - `native_country` category -> precision: 0.625, recall: 0.750, fbeta: 0.682, numb.rows: 100 -- India.
+2021-08-22 01:25:41,286 - slice_metrics - INFO - `native_country` category -> precision: 0.752, recall: 0.644, fbeta: 0.694, numb.rows: 582 -- ?.
+2021-08-22 01:25:41,286 - slice_metrics - INFO - `native_country` category -> precision: 0.846, recall: 0.333, fbeta: 0.478, numb.rows: 639 -- Mexico.
+2021-08-22 01:25:41,286 - slice_metrics - INFO - `native_country` category -> precision: 0.474, recall: 0.562, fbeta: 0.514, numb.rows: 80 -- South.
+2021-08-22 01:25:41,286 - slice_metrics - INFO - `native_country` category -> precision: 0.750, recall: 0.500, fbeta: 0.600, numb.rows: 114 -- Puerto-Rico.
+2021-08-22 01:25:41,286 - slice_metrics - INFO - `native_country` category -> precision: 1.000, recall: 1.000, fbeta: 1.000, numb.rows: 13 -- Honduras.
+2021-08-22 01:25:41,286 - slice_metrics - INFO - `native_country` category -> precision: 0.750, recall: 0.600, fbeta: 0.667, numb.rows: 90 -- England.
+2021-08-22 01:25:41,286 - slice_metrics - INFO - `native_country` category -> precision: 0.800, recall: 0.513, fbeta: 0.625, numb.rows: 121 -- Canada.
+2021-08-22 01:25:41,286 - slice_metrics - INFO - `native_country` category -> precision: 0.800, recall: 0.455, fbeta: 0.580, numb.rows: 137 -- Germany.
+2021-08-22 01:25:41,286 - slice_metrics - INFO - `native_country` category -> precision: 0.737, recall: 0.778, fbeta: 0.757, numb.rows: 43 -- Iran.
+2021-08-22 01:25:41,286 - slice_metrics - INFO - `native_country` category -> precision: 0.826, recall: 0.623, fbeta: 0.710, numb.rows: 198 -- Philippines.
+2021-08-22 01:25:41,287 - slice_metrics - INFO - `native_country` category -> precision: 0.923, recall: 0.480, fbeta: 0.632, numb.rows: 73 -- Italy.
+2021-08-22 01:25:41,287 - slice_metrics - INFO - `native_country` category -> precision: 0.571, recall: 0.333, fbeta: 0.421, numb.rows: 60 -- Poland.
+2021-08-22 01:25:41,287 - slice_metrics - INFO - `native_country` category -> precision: 0.333, recall: 0.500, fbeta: 0.400, numb.rows: 59 -- Columbia.
+2021-08-22 01:25:41,287 - slice_metrics - INFO - `native_country` category -> precision: 1.000, recall: 0.286, fbeta: 0.444, numb.rows: 19 -- Cambodia.
+2021-08-22 01:25:41,287 - slice_metrics - INFO - `native_country` category -> precision: 1.000, recall: 0.333, fbeta: 0.500, numb.rows: 18 -- Thailand.
+2021-08-22 01:25:41,287 - slice_metrics - INFO - `native_country` category -> precision: 0.500, recall: 0.500, fbeta: 0.500, numb.rows: 28 -- Ecuador.
+2021-08-22 01:25:41,287 - slice_metrics - INFO - `native_country` category -> precision: 1.000, recall: 0.500, fbeta: 0.667, numb.rows: 18 -- Laos.
+2021-08-22 01:25:41,287 - slice_metrics - INFO - `native_country` category -> precision: 0.762, recall: 0.800, fbeta: 0.780, numb.rows: 51 -- Taiwan.
+2021-08-22 01:25:41,287 - slice_metrics - INFO - `native_country` category -> precision: 0.500, recall: 0.250, fbeta: 0.333, numb.rows: 44 -- Haiti.
+2021-08-22 01:25:41,287 - slice_metrics - INFO - `native_country` category -> precision: 1.000, recall: 0.250, fbeta: 0.400, numb.rows: 37 -- Portugal.
+2021-08-22 01:25:41,288 - slice_metrics - INFO - `native_country` category -> precision: 1.000, recall: 0.000, fbeta: 0.000, numb.rows: 70 -- Dominican-Republic.
+2021-08-22 01:25:41,288 - slice_metrics - INFO - `native_country` category -> precision: 1.000, recall: 0.667, fbeta: 0.800, numb.rows: 106 -- El-Salvador.
+2021-08-22 01:25:41,288 - slice_metrics - INFO - `native_country` category -> precision: 0.714, recall: 0.417, fbeta: 0.526, numb.rows: 29 -- France.
+2021-08-22 01:25:41,288 - slice_metrics - INFO - `native_country` category -> precision: 1.000, recall: 0.333, fbeta: 0.500, numb.rows: 62 -- Guatemala.
+2021-08-22 01:25:41,288 - slice_metrics - INFO - `native_country` category -> precision: 0.727, recall: 0.800, fbeta: 0.762, numb.rows: 75 -- China.
+2021-08-22 01:25:41,288 - slice_metrics - INFO - `native_country` category -> precision: 0.727, recall: 0.667, fbeta: 0.696, numb.rows: 62 -- Japan.
+2021-08-22 01:25:41,288 - slice_metrics - INFO - `native_country` category -> precision: 0.750, recall: 0.500, fbeta: 0.600, numb.rows: 16 -- Yugoslavia.
+2021-08-22 01:25:41,288 - slice_metrics - INFO - `native_country` category -> precision: 1.000, recall: 0.500, fbeta: 0.667, numb.rows: 31 -- Peru.
+2021-08-22 01:25:41,288 - slice_metrics - INFO - `native_country` category -> precision: 1.000, recall: 1.000, fbeta: 1.000, numb.rows: 14 -- Outlying-US(Guam-USVI-etc).
+2021-08-22 01:25:41,288 - slice_metrics - INFO - `native_country` category -> precision: 1.000, recall: 0.333, fbeta: 0.500, numb.rows: 12 -- Scotland.
+2021-08-22 01:25:41,288 - slice_metrics - INFO - `native_country` category -> precision: 1.000, recall: 0.500, fbeta: 0.667, numb.rows: 19 -- Trinadad&Tobago.
+2021-08-22 01:25:41,289 - slice_metrics - INFO - `native_country` category -> precision: 0.714, recall: 0.625, fbeta: 0.667, numb.rows: 29 -- Greece.
+2021-08-22 01:25:41,289 - slice_metrics - INFO - `native_country` category -> precision: 1.000, recall: 0.000, fbeta: 0.000, numb.rows: 34 -- Nicaragua.
+2021-08-22 01:25:41,289 - slice_metrics - INFO - `native_country` category -> precision: 0.400, recall: 0.400, fbeta: 0.400, numb.rows: 67 -- Vietnam.
+2021-08-22 01:25:41,289 - slice_metrics - INFO - `native_country` category -> precision: 0.800, recall: 0.667, fbeta: 0.727, numb.rows: 20 -- Hong.
+2021-08-22 01:25:41,289 - slice_metrics - INFO - `native_country` category -> precision: 1.000, recall: 0.600, fbeta: 0.750, numb.rows: 24 -- Ireland.
+2021-08-22 01:25:41,289 - slice_metrics - INFO - `native_country` category -> precision: 1.000, recall: 0.333, fbeta: 0.500, numb.rows: 13 -- Hungary.
+2021-08-22 01:25:41,289 - slice_metrics - INFO - `native_country` category -> precision: 1.000, recall: 1.000, fbeta: 1.000, numb.rows: 1 -- Holand-Netherlands.
+2021-08-22 01:25:41,289 - slice_metrics - INFO - 
+
