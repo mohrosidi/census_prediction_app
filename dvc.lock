@@ -1,0 +1,18 @@
+schema: '2.0'
+stages:
+  pipeline:
+    cmd: python ./starter/train_model.py
+    deps:
+    - path: data/census.csv
+      md5: 145de00f6e6053d3f7044628f9a5b5ff
+      size: 3974474
+    - path: starter/params.yaml
+      md5: 6c49e31767d9bed24c6bb5feee59858f
+      size: 337
+    - path: starter/train_model.py
+      md5: 7a66488b807c3f6bbf0c9d245ea74907
+      size: 3291
+    outs:
+    - path: logs/scores.json
+      md5: 060387a8df246693f7a388053d0e5df3
+      size: 91

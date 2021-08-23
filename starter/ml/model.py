@@ -62,7 +62,7 @@ class RFClassifier:
         config_path = config_path if config_path else os.path.join(
             os.getcwd(),
             "starter", 
-            'config.yaml'
+            'params.yaml'
             )
 
         with open(config_path, 'r') as fp:

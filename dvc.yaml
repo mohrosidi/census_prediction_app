@@ -1,0 +1,10 @@
+stages:
+  pipeline:
+    cmd: python ./starter/train_model.py
+    deps:
+    - data/census.csv
+    - starter/params.yaml
+    - starter/train_model.py
+    metrics:
+    - logs/scores.json:
+        cache: false

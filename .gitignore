@@ -1,0 +1,3 @@
+.env
+logs/*.log
+starter/ml/__pycache__
