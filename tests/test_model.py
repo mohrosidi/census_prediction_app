@@ -31,8 +31,7 @@ DATA_PATH = os.path.join(
     'clean_census.csv')
 
 # Loads config
-config_path = os.path.join(os.path.dirname(__file__),
-                           '..', 'model', 'model_config.yaml')
+config_path = os.path.join(CWD, 'starter', 'params.yaml')
 with open(config_path, 'r') as fp:
     config = yaml.safe_load(fp)
 
@@ -61,7 +60,7 @@ def df():
 
 
 def test_rf_model_attributes(random_forest):
-    model = RFModel(model=random_forest)
+    model = RFClassifier(model=random_forest)
     assert hasattr(
         model,
         'model') and isinstance(
