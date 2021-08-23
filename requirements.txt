@@ -1,3 +1,4 @@
+dvc
 s3fs==2021.7.0
 aiobotocore[boto3]
 fastapi==0.67.0
@@ -9,4 +10,4 @@ scikit-learn==0.24.2
 uvicorn==0.14.0
 python-multipart==0.0.5
 PyYAML==5.4.1
-dvc
+gunicorn
