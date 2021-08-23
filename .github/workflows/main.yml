@@ -34,6 +34,9 @@ jobs:
       uses: iterative/setup-dvc@v1
       with:
         version: '2.6.3'
+    - name: Add module to python path
+      run: |
+        export PYTHONPATH="${PYTHONPATH}:/home/runner/work/mlops_census/mlops_census"
     - name: Sets up DVC remote
       run: |
         dvc remote add -d s3_artifacts ${{ env.DVC_REMOTE_REPOSITORY }}

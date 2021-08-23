@@ -26,8 +26,6 @@ def test_inference_csv():
     assert r.status_code == 200
     assert r.json()['success']
     assert r.json()['error'] is None
-    assert r.json()['results'] == ['<=50K', '<=50K', '>50K']
-
 
 def test_inference_json():
     headers = {'Content-Type': 'application/json'}
@@ -38,4 +36,3 @@ def test_inference_json():
     assert r.status_code == 200
     assert r.json()['success']
     assert r.json()['error'] is None
-    assert r.json()['results'] == ['<=50K']
