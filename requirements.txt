@@ -1,5 +1,6 @@
 dvc
 s3fs==2021.7.0
+dvc[s3]
 aioboto3
 aiobotocore
 fastapi==0.67.0
