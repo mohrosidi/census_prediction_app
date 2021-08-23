@@ -4,7 +4,7 @@ from fastapi.testclient import TestClient
 
 import main
 
-client = TestClient(app)
+client = TestClient(main)
 
 CWD = os.getcwd()
 
