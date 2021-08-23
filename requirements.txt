@@ -1,6 +1,7 @@
 dvc
 s3fs==2021.7.0
-aiobotocore[boto3]
+aioboto3
+aiobotocore
 fastapi==0.67.0
 numpy==1.21.1
 pandas==1.3.1
