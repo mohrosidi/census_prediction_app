@@ -28,7 +28,7 @@ def preprocess_data(
         location where the result will be save
     dest_filename : str
         Name of the file output
-    
+
     Returns
     -------
     new_df : pd.DataFrame
@@ -39,7 +39,8 @@ def preprocess_data(
 
     # strip whitespaces from column values
     for col in new_df.columns:
-        if new_df[col].dtype == object and isinstance(new_df.iloc[0][col], str):
+        if new_df[col].dtype == object and isinstance(
+                new_df.iloc[0][col], str):
             new_df[col] = new_df[col].str.strip()
 
     if dest_path is not None:

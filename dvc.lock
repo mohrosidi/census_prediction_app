@@ -10,9 +10,9 @@ stages:
       md5: 6c49e31767d9bed24c6bb5feee59858f
       size: 337
     - path: starter/train_model.py
-      md5: 7a66488b807c3f6bbf0c9d245ea74907
-      size: 3291
+      md5: 1d4bf336053e22db90bb382f34064f22
+      size: 3371
     outs:
     - path: logs/scores.json
-      md5: 060387a8df246693f7a388053d0e5df3
-      size: 91
+      md5: ec10db3656b0d099083abf20e8ab8724
+      size: 92
