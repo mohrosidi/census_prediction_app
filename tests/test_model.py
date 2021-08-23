@@ -9,7 +9,7 @@ from sklearn.ensemble import RandomForestClassifier
 
 from starter.ml.data import process_data
 from starter.ml.model import load_artifact, compute_slice_metrics, \
-    inference, RFModel
+    inference, RFClassifier
 
 CWD = os.getcwd()
 
