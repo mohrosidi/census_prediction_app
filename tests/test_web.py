@@ -1,12 +1,14 @@
 import os
 import json
 from fastapi.testclient import TestClient
-from web.main import app
+from web.app import app
 
 client = TestClient(app)
 
-CSV_SAMPLE_PATH = os.path.join(os.path.dirname(__file__), 'sample.csv')
-JSON_SAMPLE_PATH = os.path.join(os.path.dirname(__file__), 'sample.json')
+CWD = os.getcwd()
+
+CSV_SAMPLE_PATH = os.path.join(CWD,"tests", 'sample.csv')
+JSON_SAMPLE_PATH = os.path.join(CWD,"tests", 'sample.json')
 
 
 def test_get_root():
