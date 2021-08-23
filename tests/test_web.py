@@ -5,10 +5,8 @@ from web.main import app
 
 client = TestClient(app)
 
-CWD = os.getcwd()
-
-CSV_SAMPLE_PATH = os.path.join(CWD, "tests", 'sample.csv')
-JSON_SAMPLE_PATH = os.path.join(CWD, "tests", 'sample.json')
+CSV_SAMPLE_PATH = os.path.join(os.path.dirname(__file__), 'sample.csv')
+JSON_SAMPLE_PATH = os.path.join(os.path.dirname(__file__), 'sample.json')
 
 
 def test_get_root():
