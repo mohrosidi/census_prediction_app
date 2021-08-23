@@ -1,9 +1,9 @@
 import os
 import json
 from fastapi.testclient import TestClient
-from web import main
+from web.main import app
 
-client = TestClient(main)
+client = TestClient(app)
 
 CWD = os.getcwd()
 
