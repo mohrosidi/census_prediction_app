@@ -7,8 +7,8 @@ import numpy as np
 from sklearn.preprocessing import LabelBinarizer, OneHotEncoder
 from sklearn.ensemble import RandomForestClassifier
 
-from model.ml.data import process_data
-from model.ml.model import load_artifact, compute_slice_metrics, \
+from starter.ml.data import process_data
+from starter.ml.model import load_artifact, compute_slice_metrics, \
     inference, RFModel
 
 CWD = os.getcwd()
