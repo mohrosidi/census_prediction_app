@@ -10,7 +10,7 @@ JSON_SAMPLE_PATH = os.path.join(os.path.dirname(__file__), 'sample.json')
 
 
 def test_get_root():
-    r = client.get('http://localhost:8000/')
+    r = client.get('http://localhost:5000/')
     get_content = r.content.decode('utf-8').strip('"')
 
     assert r.status_code == 200
@@ -19,7 +19,7 @@ def test_get_root():
 
 def test_inference_csv():
     csv_file = {'csv_file': open(CSV_SAMPLE_PATH, 'rb')}
-    r = client.post('http://localhost:8000/batch_inference', files=csv_file)
+    r = client.post('http://localhost:5000/batch_inference', files=csv_file)
 
     assert r.status_code == 200
     assert r.json()['success']
@@ -29,7 +29,7 @@ def test_inference_csv():
 
 def test_inference_json():
     headers = {'Content-Type': 'application/json'}
-    r = client.post('http://localhost:8000/inference',
+    r = client.post('http://localhost:5000/inference',
                     json=json.load(open(JSON_SAMPLE_PATH, 'r')),
                     headers=headers)
 
