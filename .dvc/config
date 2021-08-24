@@ -1,0 +1,4 @@
+[core]
+    remote = mlopscensus
+['remote "mlopscensus"']
+    url = s3://mlopscensus/artifact
