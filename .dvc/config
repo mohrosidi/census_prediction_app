@@ -1,6 +1,4 @@
 [core]
     remote = mlopsudacity
-['remote "mlopscensus"']
-    url = s3://mlopscensus/artifact
 ['remote "mlopsudacity"']
     url = s3://mlopsudacity/artifact
