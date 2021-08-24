@@ -1,3 +1,5 @@
 .env
 logs/*.log
-starter/ml/__pycache__
+starter/ml/__pycache__/
+starter/__pycache__/
+web/__pycache__/
