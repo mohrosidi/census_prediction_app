@@ -36,6 +36,3 @@ def test_inference_json():
     assert r.status_code == 200
     assert r.json()['success']
     assert r.json()['error'] is None
-
-if __name__ == "__main__":
-    test_get_root()
