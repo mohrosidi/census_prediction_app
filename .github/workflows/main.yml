@@ -30,10 +30,6 @@ jobs:
         python3 -m pip install --upgrade pip
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Install DVC
-      uses: iterative/setup-dvc@v1
-      with:
-        version: '2.6.3'
     - name: Add module to python path
       run: |
         export PYTHONPATH="${PYTHONPATH}:/home/runner/work/mlops_census/"
