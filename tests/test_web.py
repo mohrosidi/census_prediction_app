@@ -1,3 +1,10 @@
+"""
+Test Module for Web App
+
+Author : Moh. Rosidi
+Date   : August, 2021
+"""
+
 import os
 import json
 from fastapi.testclient import TestClient
@@ -7,11 +14,14 @@ client = TestClient(app)
 
 CWD = os.getcwd()
 
-CSV_SAMPLE_PATH = os.path.join(CWD,"tests", 'sample.csv')
-JSON_SAMPLE_PATH = os.path.join(CWD,"tests", 'sample.json')
+CSV_SAMPLE_PATH = os.path.join(CWD, "tests", 'sample.csv')
+JSON_SAMPLE_PATH = os.path.join(CWD, "tests", 'sample.json')
 
 
 def test_get_root():
+    """
+    Test root directory
+    """
     r = client.get('http://localhost:5000/')
     get_content = r.content.decode('utf-8').strip('"')
 
@@ -20,6 +30,9 @@ def test_get_root():
 
 
 def test_inference_csv():
+    """
+    Test batch inference path
+    """
     csv_file = {'csv_file': open(CSV_SAMPLE_PATH, 'rb')}
     r = client.post('http://localhost:5000/batch_inference', files=csv_file)
 
@@ -28,6 +41,9 @@ def test_inference_csv():
     assert r.json()['error'] is None
 
 def test_inference_json():
+    """
+    Test inference path
+    """
     headers = {'Content-Type': 'application/json'}
     r = client.post('http://localhost:5000/inference',
                     json=json.load(open(JSON_SAMPLE_PATH, 'r')),
