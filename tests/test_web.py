@@ -22,10 +22,10 @@ def test_root():
     """
     Test root directory
     """
-    r = client.get('http://localhost:5000/')
-    get_content = r.content.decode('utf-8').strip('"')
+    result = client.get('http://localhost:5000/')
+    get_content = result.content.decode('utf-8').strip('"')
 
-    assert r.status_code == 200
+    assert result.status_code == 200
     assert get_content == 'Welcome to census predictor app!'
 
 
@@ -34,21 +34,21 @@ def test_inference_csv():
     Test batch inference path
     """
     csv_file = {'csv_file': open(CSV_SAMPLE_PATH, 'rb')}
-    r = client.post('http://localhost:5000/batch_inference', files=csv_file)
+    result = client.post('http://localhost:5000/batch_inference', files=csv_file)
 
-    assert r.status_code == 200
-    assert r.json()['success']
-    assert r.json()['error'] is None
+    assert result.json()['error'] is None
+    assert result.status_code == 200
+    assert result.json()['success']
 
 def test_inference_json():
     """
     Test inference path
     """
     headers = {'Content-Type': 'application/json'}
-    r = client.post('http://localhost:5000/stream_inference',
+    result = client.post('http://localhost:5000/stream_inference',
                     json=json.load(open(JSON_SAMPLE_PATH, 'r')),
                     headers=headers)
 
-    assert r.status_code == 200
-    assert r.json()['success']
-    assert r.json()['error'] is None
+    assert result.json()['error'] is None
+    assert result.status_code == 200
+    assert result.json()['success']

@@ -25,7 +25,7 @@ def predict_json():
 
 def predict_csv():
     csv_file = {'csv_file': open(CSV_SAMPLE_PATH, 'rb')}
-    r = requests.post(ENDPOINT + 'batch_inference', files=csv_file)
+    result = requests.post(ENDPOINT + 'batch_inference', files=csv_file)
     print(result.status_code)
     print(result.json())
 
