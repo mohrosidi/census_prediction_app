@@ -11,8 +11,6 @@ Mohammad Rosidi created this model. It is a random forest classifier using the h
 ## Intended Use
 This model should be used to predict the salary category of a person based off the US census data. Users could be researchers, social anthropologists, or hobbyists.
 
-The web API accepts JSON for individual inference, and a csv file for bulk inference.
-
 ## Training Data
 The data is the [Census Bureau data obtained from Udacity](https://github.com/udacity/nd0821-c3-starter-code/blob/master/starter/data/census.csv). The original data had 32,561 rows and a 80-20 split was used to break this into a train-test set. No stratification was done.
 
@@ -42,4 +40,6 @@ Given the census data contains sensitive, and highly charged information like ed
 ## Caveats and Recommendations
 The distribution of the census data is skewed heavily towards certain categorical features. There is significant under-representation of some races, workclass, education levels, marital status and native country in the data (see [slice_output.txt](https://github.com/mohrosidi/mlops_census/blob/master/logs/slice_output.txt)).
 
-As this model was not extensively tested and a hyperparameter search was not performed, it is recommended that further work to first increase the overall model performance be done, and then make subsequent attempts to gain a better dataset that is more representative of a distribution of the overall US population.
+This model was not extensively tested and a hyperparameter search was not performed, it is recommended that further work to first increase the overall model performance be done, and then make subsequent attempts to gain a better dataset that is more representative of a distribution of the overall US population.
+
+

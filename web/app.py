@@ -21,7 +21,7 @@ from pydantic import BaseModel
 rf_model = RFClassifier()
 app = FastAPI()
 
-class CensusClass(BaseModel):
+class CensusObject(BaseModel):
     age: int
     workclass: str
     fnlgt: str
@@ -59,15 +59,14 @@ class CensusClass(BaseModel):
 
 
 @app.get('/')
-def welcome():
-    return "Hello from Census Predictor!"
+def test():
+    return "Welcome to census predictor app!"
 
 
 @app.post('/batch_inference')
 async def batch_inference(csv_file: UploadFile = File(...)):
 
     try:
-        # loads the uploaded file
         str_buf = StringIO(str(csv_file.file.read(), 'utf-8'))
         df = pd.read_csv(str_buf, encoding='utf-8')
         df.columns = [col.strip().replace('-', '_') for col in df.columns]
@@ -78,7 +77,6 @@ async def batch_inference(csv_file: UploadFile = File(...)):
                 'error': 'Failed to parse uploaded file.'}
 
     try:
-        # process and perform inference
         X, _, _, _ = process_data(df,
                                   categorical_features=rf_model.CAT_FEATURES,
                                   training=False,
@@ -93,8 +91,8 @@ async def batch_inference(csv_file: UploadFile = File(...)):
     return {'success': True, 'results': y_preds, 'error': None}
 
 
-@app.post('/inference')
-async def inference(individual: CensusClass):
+@app.post('/stream_inference')
+async def inference(individual: CensusObject):
 
     try:
         indv_dict = {k: [v] for k, v in individual.dict().items()}
@@ -105,7 +103,6 @@ async def inference(individual: CensusClass):
                 'error': 'Failed to parse JSON body.'}
 
     try:
-        # process and perform inference
         X, _, _, _ = process_data(df,
                                   categorical_features=rf_model.CAT_FEATURES,
                                   training=False,

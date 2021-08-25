@@ -18,7 +18,7 @@ CSV_SAMPLE_PATH = os.path.join(CWD, "tests", 'sample.csv')
 JSON_SAMPLE_PATH = os.path.join(CWD, "tests", 'sample.json')
 
 
-def test_get_root():
+def test_root():
     """
     Test root directory
     """
@@ -26,7 +26,7 @@ def test_get_root():
     get_content = r.content.decode('utf-8').strip('"')
 
     assert r.status_code == 200
-    assert get_content == 'Hello from Census Predictor!'
+    assert get_content == 'Welcome to census predictor app!'
 
 
 def test_inference_csv():
@@ -45,7 +45,7 @@ def test_inference_json():
     Test inference path
     """
     headers = {'Content-Type': 'application/json'}
-    r = client.post('http://localhost:5000/inference',
+    r = client.post('http://localhost:5000/stream_inference',
                     json=json.load(open(JSON_SAMPLE_PATH, 'r')),
                     headers=headers)
 

@@ -16,10 +16,8 @@ from ml.model import train_model, compute_model_metrics, \
     inference, save_artifact, compute_slice_metrics
 from ml.data import process_data, preprocess_data
 
-# get current directory
 CWD = os.getcwd()
 
-# Set up logging
 logging.basicConfig(
     filename=os.path.join(
         CWD,
@@ -41,24 +39,20 @@ SLICE_LOGGER.addHandler(
         mode='w',
     ))
 
-# Loads config
 with open(os.path.join(CWD, "starter", 'params.yaml'), 'r', encoding="UTF-8") as fp:
     CONFIG = yaml.safe_load(fp)
 
 CAT_FEATURES = CONFIG['categorical_features']
 
-# Loads census data
-DATA_FILENAME = 'census.csv'
+DATA_FILENAME = 'clean_census.csv'
 DATA_DIR = os.path.join(
     CWD,
     'data'
 )
 DATA_PATH = os.path.join(DATA_DIR, DATA_FILENAME)
 
-RAW_DF = pd.read_csv(DATA_PATH)
-PREPROCESSED_DF = preprocess_data(RAW_DF, dest_path=DATA_DIR)
+PREPROCESSED_DF = pd.read_csv(DATA_PATH)
 
-# Data segregation
 TRAIN, TEST = train_test_split(
     PREPROCESSED_DF,
     test_size=0.20,
@@ -82,10 +76,8 @@ X_TEST, Y_TEST, _, _ = process_data(
 
 logging.info("Model parameters: %s}", CONFIG['random_forest'])
 
-# Train and save a model.
 MODEL = train_model(X_TRAIN, Y_TRAIN, CONFIG['random_forest'])
 
-# Scoring
 Y_TEST_PREDS = inference(MODEL, X_TEST)
 PRECISION, RECALL, FBETA = compute_model_metrics(Y_TEST, Y_TEST_PREDS)
 
@@ -94,27 +86,22 @@ logging.info(
     PRECISION, RECALL, FBETA
 )
 
-# Track the model scores
 with open(os.path.join(CWD, "logs", 'scores.json'), "w", encoding="UTF-8") as f:
     json.dump({"precision": PRECISION,
                "recall": RECALL,
                "fbeta": FBETA},
               f)
 
-# export artifacts
 MODEL_DIR = os.path.join(
     CWD,
     'model')
 
-# model export
 MODEL_DEST_PATH = os.path.join(MODEL_DIR, 'random_forest.pkl')
 save_artifact(MODEL, MODEL_DEST_PATH)
 
-# encoder and labelbinarizer export for inference
 save_artifact(ENCODER, os.path.join(MODEL_DIR, 'onehot_encoder.pkl'))
 save_artifact(LABEL, os.path.join(MODEL_DIR, 'label_binarizer.pkl'))
 
-# compute metrics based on slice
 CLEAN_DF = pd.read_csv(
     os.path.join(
         CWD,
