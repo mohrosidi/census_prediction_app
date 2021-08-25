@@ -1,12 +1,12 @@
 # Model Card
 
 ## Model Details
-Mohammad Rosidi created this model. It is a random forest classifier using the hyperparameters with `scikit-learn 0.24.2`: 
+A random forest classifier using the hyperparameters with `scikit-learn 0.24.2`: 
 
-- `n_estimators`: 100
-- `max_depth`: 7
-- `criterion`: entropy
-- `max_features`: 0.4
+  - n_estimators: 100
+  - criterion: entropy
+  - max_depth: 7
+  - max_features: 10
 
 ## Intended Use
 This model should be used to predict the salary category of a person based off the US census data. Users could be researchers, social anthropologists, or hobbyists.
