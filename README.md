@@ -149,3 +149,7 @@ This project uses Github actions (`.github/workflows`) for CI and Heroku for CD.
 2. `AWS_SECRET_ACCESS_KEY`
 
 These env variables are required as the dvc remote is in a S3 bucket.
+
+## Acknowledgments
+
+Thanks to [ashrielbrian](https://github.com/ashrielbrian/MLDevOps_census) who teach me how to wrap model object to class. Please see [model.py](https://github.com/mohrosidi/census_prediction_app/blob/master/starter/ml/model.py)
