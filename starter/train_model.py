@@ -44,7 +44,7 @@ with open(os.path.join(CWD, "starter", 'params.yaml'), 'r', encoding="UTF-8") as
 
 CAT_FEATURES = CONFIG['categorical_features']
 
-DATA_FILENAME = 'clean_census.csv'
+DATA_FILENAME = CONFIG['data']
 DATA_DIR = os.path.join(
     CWD,
     'data'
@@ -74,9 +74,9 @@ X_TEST, Y_TEST, _, _ = process_data(
     encoder=ENCODER,
     lb=LABEL)
 
-logging.info("Model parameters: %s}", CONFIG['random_forest'])
+logging.info("Model parameters: %s}", CONFIG['train_params'])
 
-MODEL = train_model(X_TRAIN, Y_TRAIN, CONFIG['random_forest'])
+MODEL = train_model(X_TRAIN, Y_TRAIN, CONFIG['train_params'])
 
 Y_TEST_PREDS = inference(MODEL, X_TEST)
 PRECISION, RECALL, FBETA = compute_model_metrics(Y_TEST, Y_TEST_PREDS)
@@ -96,17 +96,17 @@ MODEL_DIR = os.path.join(
     CWD,
     'model')
 
-MODEL_DEST_PATH = os.path.join(MODEL_DIR, 'random_forest.pkl')
+MODEL_DEST_PATH = os.path.join(MODEL_DIR, CONFIG['model_output'])
 save_artifact(MODEL, MODEL_DEST_PATH)
 
-save_artifact(ENCODER, os.path.join(MODEL_DIR, 'onehot_encoder.pkl'))
-save_artifact(LABEL, os.path.join(MODEL_DIR, 'label_binarizer.pkl'))
+save_artifact(ENCODER, os.path.join(MODEL_DIR, CONFIG['encoder_output']))
+save_artifact(LABEL, os.path.join(MODEL_DIR, CONFIG['label_binarizer_output']))
 
 CLEAN_DF = pd.read_csv(
     os.path.join(
         CWD,
         'data',
-        'clean_census.csv'))
+        CONFIG['data']))
 
 for elem in CAT_FEATURES:
     slice_metrics = compute_slice_metrics(CLEAN_DF, elem)

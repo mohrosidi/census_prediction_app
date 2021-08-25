@@ -16,28 +16,27 @@ from starter.ml.model import load_artifact, compute_slice_metrics, \
 
 CWD = os.getcwd()
 
-MODEL_PATH = os.path.join(
-    CWD,
-    'model',
-    'random_forest.pkl')
-BINARIZER_PATH = os.path.join(
-    CWD,
-    'model',
-    'label_binarizer.pkl')
-ENCODER_PATH = os.path.join(
-    CWD,
-    'model',
-    'onehot_encoder.pkl')
-DATA_PATH = os.path.join(
-    CWD,
-    'data',
-    'clean_census.csv')
-
 # Loads config
 config_path = os.path.join(CWD, 'starter', 'params.yaml')
 with open(config_path, 'r') as fp:
-    config = yaml.safe_load(fp)
+    CONFIG = yaml.safe_load(fp)
 
+MODEL_PATH = os.path.join(
+    CWD,
+    'model',
+    CONFIG['model_output'])
+BINARIZER_PATH = os.path.join(
+    CWD,
+    'model',
+    CONFIG['label_binarizer_output'])
+ENCODER_PATH = os.path.join(
+    CWD,
+    'model',
+    CONFIG['encoder_output'])
+DATA_PATH = os.path.join(
+    CWD,
+    'data',
+    CONFIG['data'])
 
 @pytest.fixture
 def random_forest():
@@ -86,7 +85,7 @@ def test_load_model():
 
 
 def test_compute_slice_metrics(df):
-    SLICES = config['categorical_features']
+    SLICES = CONFIG['categorical_features']
     for slice in SLICES:
         predictions = compute_slice_metrics(df, slice)
         for feature, metrics in predictions.items():
@@ -103,7 +102,7 @@ def test_compute_slice_metrics(df):
 
 def test_process_data(encoder, binarizer, df):
     X, y, _, _ = process_data(df,
-                              categorical_features=config['categorical_features'],
+                              categorical_features=CONFIG['categorical_features'],
                               label='salary', training=False, encoder=encoder,
                               lb=binarizer)
     assert isinstance(X, np.ndarray)
@@ -113,7 +112,7 @@ def test_process_data(encoder, binarizer, df):
 
 def test_inference(random_forest, encoder, binarizer, df):
     X, y, _, _ = process_data(df,
-                              categorical_features=config['categorical_features'],
+                              categorical_features=CONFIG['categorical_features'],
                               label='salary', training=False, encoder=encoder,
                               lb=binarizer)
 

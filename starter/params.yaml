@@ -1,13 +1,9 @@
 random_seed: 42
-random_forest:
+data: clean_census.csv
+train_params:
   n_estimators: 100
   criterion: entropy
   max_depth: 7
-  min_samples_split: 2
-  min_samples_leaf: 1
-  bootstrap: true
-  oob_score: false
-  n_jobs: -1
   max_features: 10
 categorical_features:
   - workclass
@@ -18,3 +14,6 @@ categorical_features:
   - race
   - sex
   - native_country
+model_output: random_forest.pkl
+encoder_output: onehot_encoder.pkl
+label_binarizer_output: label_binarizer.pkl
