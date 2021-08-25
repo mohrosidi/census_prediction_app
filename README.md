@@ -114,8 +114,6 @@ There are 4 files generate from this process:
 1. `clean_census.csv` in data folder
 2. model artifact in model folder
 
-## Github Action
-
 ## GitHub Actions
 
 In this project i have already setup testing process in `main.yml` (`./.github/workflows/main.yml`). If you want to run your own testing process using github action, you can change several part of that file.
