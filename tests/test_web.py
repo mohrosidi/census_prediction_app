@@ -14,8 +14,8 @@ client = TestClient(app)
 
 CWD = os.getcwd()
 
-CSV_SAMPLE_PATH = os.path.join(CWD, "tests", 'sample.csv')
-JSON_SAMPLE_PATH = os.path.join(CWD, "tests", 'sample.json')
+CSV_SAMPLE_PATH = os.path.join(CWD, "data", 'sample.csv')
+JSON_SAMPLE_PATH = os.path.join(CWD, "data", 'sample.json')
 
 
 def test_root():
