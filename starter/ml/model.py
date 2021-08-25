@@ -19,6 +19,9 @@ class RFClassifier:
     """
         Random forest classifier model. Uses the default paths to load the model artifacts
         if none is provided as args.
+        
+        This code inspired by: ashrielbrian
+        Github : https://github.com/ashrielbrian/MLDevOps_census
     """
     _default_model_path = os.path.join(
         os.getcwd(),
