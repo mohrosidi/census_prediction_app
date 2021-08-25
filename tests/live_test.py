@@ -10,24 +10,24 @@ JSON_SAMPLE_PATH = os.path.join(CWD, "data", 'sample.json')
 
 
 def root():
-    r = requests.get(ENDPOINT)
-    print(r.status_code)
+    result = requests.get(ENDPOINT)
+    print(result.status_code)
 
 
 def predict_json():
     headers = {'Content-Type': 'application/json'}
-    r = requests.post(ENDPOINT + 'stream_inference',
+    result = requests.post(ENDPOINT + 'stream_inference',
                       json=json.load(open(JSON_SAMPLE_PATH, 'r')),
                       headers=headers)
-    print(r.status_code)
-    print(r.json())
+    print(result.status_code)
+    print(result.json())
 
 
 def predict_csv():
     csv_file = {'csv_file': open(CSV_SAMPLE_PATH, 'rb')}
     r = requests.post(ENDPOINT + 'batch_inference', files=csv_file)
-    print(r.status_code)
-    print(r.json())
+    print(result.status_code)
+    print(result.json())
 
 
 if __name__ == '__main__':
