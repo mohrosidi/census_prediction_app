@@ -148,8 +148,18 @@ This project uses Github actions (`.github/workflows`) for CI and Heroku for CD.
 1. `AWS_ACCESS_KEY_ID`
 2. `AWS_SECRET_ACCESS_KEY`
 
+or simply run this command in heroku CLI
+
+'''bash
+heroku config:set AWS_ACCESS_KEY_ID=xxx AWS_SECRET_ACCESS_KEY=yyy -a <yourappname>
+'''
+
 These env variables are required as the dvc remote is in a S3 bucket.
 
 ## Acknowledgments
 
 Thanks to [ashrielbrian](https://github.com/ashrielbrian/MLDevOps_census) who teach me how to wrap model object to class. Please see [model.py](https://github.com/mohrosidi/census_prediction_app/blob/master/starter/ml/model.py)
+
+## Live API
+
+If you want to test the API, you can visit <https://mlops-census.herokuapp.com/docs>
