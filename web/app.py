@@ -12,8 +12,33 @@ if "DYNO" in os.environ and os.path.isdir(".dvc"):
         exit("dvc pull failed")
     os.system("rm -r .dvc .apt/usr/lib/dvc")
 
+description = """
+CensusAPP API helps you to predict salary category based on demographic data 🚀
+"""
+
+tags_metadata = [
+    {
+        "name": "batch_inference",
+        "description": "Perform inference based on uploaded csv file",
+    },
+    {
+        "name": "stream_inference",
+        "description": "Perform inference based on uploaded json like data format",
+        },
+    }
+]
+
 rf_model = RFClassifier()
-app = FastAPI()
+app = FastAPI(
+    title="CensusAPP",
+    version="0.0.1",
+    contact={
+        "name": "Mohammad Rosidi",
+        "url": "https://github.com/mohrosidi",
+        "email": "moh.rosidi2610@gmail.com",
+    },
+    openapi_tags=tags_metadata
+)
 
 class CensusObject(BaseModel):
     age: int
@@ -57,7 +82,7 @@ def test():
     return "Welcome to census predictor app!"
 
 
-@app.post('/batch_inference')
+@app.post('/batch_inference', tags=["batch_inference"])
 async def batch_inference(csv_file: UploadFile = File(...)):
 
     try:
@@ -85,7 +110,7 @@ async def batch_inference(csv_file: UploadFile = File(...)):
     return {'success': True, 'results': y_preds, 'error': None}
 
 
-@app.post('/stream_inference')
+@app.post('/stream_inference', tags=['stream_inference'])
 async def inference(individual: CensusObject):
 
     try:
