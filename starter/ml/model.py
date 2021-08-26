@@ -190,8 +190,8 @@ def compute_slice_metrics(
                                   categorical_features=model.CAT_FEATURES,
                                   label='salary',
                                   training=False,
-                                  encoder=rf_model.encoder,
-                                  lb=rf_model.binarizer)
+                                  encoder=model.encoder,
+                                  lb=model.binarizer)
 
         y_preds = model.model.predict(X)
 
