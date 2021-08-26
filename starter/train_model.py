@@ -97,19 +97,13 @@ MODEL_DIR = os.path.join(
     'model')
 
 MODEL_DEST_PATH = os.path.join(MODEL_DIR, CONFIG['model_output'])
-save_artifact(MODEL, MODEL_DEST_PATH)
 
+save_artifact(MODEL, MODEL_DEST_PATH)
 save_artifact(ENCODER, os.path.join(MODEL_DIR, CONFIG['encoder_output']))
 save_artifact(LABEL, os.path.join(MODEL_DIR, CONFIG['label_binarizer_output']))
 
-CLEAN_DF = pd.read_csv(
-    os.path.join(
-        CWD,
-        'data',
-        CONFIG['data']))
-
 for elem in CAT_FEATURES:
-    slice_metrics = compute_slice_metrics(CLEAN_DF, elem)
+    slice_metrics = compute_slice_metrics(PREPROCESSED_DF, elem)
 
     SLICE_LOGGER.info("`%s` category", elem)
     for feature_val, metrics in slice_metrics.items():

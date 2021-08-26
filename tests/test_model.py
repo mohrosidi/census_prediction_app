@@ -83,21 +83,21 @@ def test_rf_model_attributes(random_forest):
 def test_load_model():
     assert isinstance(load_artifact(MODEL_PATH), RandomForestClassifier)
 
+def test_load_binarizer():
+    assert isinstance(load_artifact(BINARIZER_PATH), LabelBinarizer)
+
+def test_load_encoder():
+    assert isinstance(load_artifact(ENCODER_PATH), OneHotEncoder)
 
 def test_compute_slice_metrics(df):
     SLICES = CONFIG['categorical_features']
-    for slice in SLICES:
-        predictions = compute_slice_metrics(df, slice)
+    for elem in SLICES:
+        predictions = compute_slice_metrics(df, elem)
         for feature, metrics in predictions.items():
             assert isinstance(feature, str)
-            #assert metrics['precision'] > 0.5
-            assert isinstance(
-                metrics['precision'],
-                float) and isinstance(
-                metrics['recall'],
-                float) and isinstance(
-                metrics['fbeta'],
-                float)
+            assert isinstance(metrics['precision'], float)
+            assert isinstance(metrics['recall'], float)
+            assert isinstance(metrics['fbeta'], float)
 
 
 def test_process_data(encoder, binarizer, df):
@@ -109,6 +109,12 @@ def test_process_data(encoder, binarizer, df):
     assert len(X) > 0
     assert isinstance(y, np.ndarray)
 
+def test_encoder_artifact(encoder, binarizer, df):
+    _, _, encoder, lb = process_data(df,
+                              categorical_features=CONFIG['categorical_features'],
+                              label='salary', training=True)
+    assert isinstance(lb, LabelBinarizer)
+    assert isinstance(encoder, OneHotEncoder)
 
 def test_inference(random_forest, encoder, binarizer, df):
     X, y, _, _ = process_data(df,
