@@ -17,7 +17,15 @@ from .data import process_data
 
 class RFClassifier:
     """
+<<<<<<< HEAD
     Random forest classifier model.
+=======
+        Random forest classifier model. Uses the default paths to load the model artifacts
+        if none is provided as args.
+        
+        This code inspired by: ashrielbrian
+        Github : https://github.com/ashrielbrian/MLDevOps_census
+>>>>>>> 9830b98897154b2e0a53aad14b2790ece84ab022
     """
     def __init__(
             self,
