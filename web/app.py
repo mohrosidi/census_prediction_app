@@ -12,12 +12,9 @@ if "DYNO" in os.environ and os.path.isdir(".dvc"):
         exit("dvc pull failed")
     os.system("rm -r .dvc .apt/usr/lib/dvc")
 
-description = """
-CensusAPP API helps you to predict salary category based on demographic data 🚀
-"""
+description = "CensusAPP API helps you to predict salary category based on demographic data 🚀"
 
-tags_metadata = [
-    {
+tags_metadata = [{
         "name": "batch_inference",
         "description": "Perform inference based on uploaded csv file",
     },
@@ -25,8 +22,7 @@ tags_metadata = [
         "name": "stream_inference",
         "description": "Perform inference based on uploaded json like data format",
         },
-    }
-]
+    ]
 
 rf_model = RFClassifier()
 app = FastAPI(
