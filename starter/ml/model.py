@@ -17,15 +17,7 @@ from .data import process_data
 
 class RFClassifier:
     """
-<<<<<<< HEAD
     Random forest classifier model.
-=======
-        Random forest classifier model. Uses the default paths to load the model artifacts
-        if none is provided as args.
-        
-        This code inspired by: ashrielbrian
-        Github : https://github.com/ashrielbrian/MLDevOps_census
->>>>>>> 9830b98897154b2e0a53aad14b2790ece84ab022
     """
     def __init__(
             self,
@@ -39,7 +31,7 @@ class RFClassifier:
         config_path = config_path if config_path else os.path.join(
             os.getcwd(),
             "starter", 
-            'params.yaml'
+            "params.yaml"
             )
 
         with open(config_path, 'r') as fp:
@@ -47,19 +39,19 @@ class RFClassifier:
 
         self.model =  model if model else load(os.path.join(
             os.getcwd(),
-            "starter", 
+            "model", 
             CONFIG['model_output']
             )
         )
         self.binarizer = binarizer if binarizer else load(os.path.join(
             os.getcwd(),
-            "starter", 
+            "model", 
             CONFIG['label_binarizer_output']
             )
         )
         self.encoder = encoder if encoder else load(os.path.join(
             os.getcwd(),
-            "starter", 
+            "model", 
             CONFIG['encoder_output']
             )
         )
