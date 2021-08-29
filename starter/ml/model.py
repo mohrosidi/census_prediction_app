@@ -5,7 +5,6 @@ Author : Moh. Rosidi
 Date   : August 2021
 """
 import os
-from joblib import load, dump
 import numpy as np
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
@@ -126,48 +125,27 @@ def inference(model: RandomForestClassifier, X: np.array):
     preds = model.predict(X)
     return preds
 
-def save_artifact(artifact, dest_path: str):
-    """
-        Saves the artifact to the dest_path.
-        Inputs
-        ------
-        artifact : Any
-            Pickleable/Serializable object
-        dest_path : str
-            Destination path to save artifact
-        Returns
-        -------
-    """
-    dump(artifact, dest_path)
-
-def load_artifact(target_path: str):
-    """
-    Loads the artifact from the target_path.
-    Inputs
-    ------
-    target_path : str
-        Target path the artifact is located
-    Returns
-    -------
-    artifact : Any
-    """
-    return load(target_path)
-
-
 def compute_slice_metrics(
         df: pd.DataFrame,
         category: str,
-        model: RFClassifier = RFClassifier()):
+        model,
+        encoder:OneHotEncoder,
+        binarizer:LabelBinarizer):
     """
     Computes model metrics based on data slices
     Inputs
     ------
     df : pd.DataFrame
          Dataframe containing the cleaned data
-     category : str
+    category : str
          Dataframe column to slice
-     rf_model: RFClassifier
+    rf_model: 
          Random forest model used to perform prediction
+    encoder: OneHotEncoder
+         Trained OneHotEncoder
+    binarizer: LabelBinarizer
+        Trained LabelBinarizer
+
      Returns
      -------
      predictions : dict
@@ -179,13 +157,12 @@ def compute_slice_metrics(
         filtered_df = df[df[category] == cat_feature]
 
         X, y, _, _ = process_data(filtered_df,
-                                  categorical_features=model.CAT_FEATURES,
                                   label='salary',
                                   training=False,
-                                  encoder=model.encoder,
-                                  lb=model.binarizer)
+                                  encoder=encoder,
+                                  lb=binarizer)
 
-        y_preds = model.model.predict(X)
+        y_preds = model.predict(X)
 
         precision, recall, fbeta = compute_model_metrics(y, y_preds)
         predictions[cat_feature] = {

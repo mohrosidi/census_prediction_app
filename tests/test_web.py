@@ -5,6 +5,7 @@ Author : Moh. Rosidi
 Date   : August, 2021
 """
 
+from logging import exception
 import os
 import json
 from fastapi.testclient import TestClient
@@ -22,6 +23,11 @@ def test_root():
     """
     Test root directory
     """
+    try:
+        result = client.get('http://localhost:5000/')
+    except TypeError:
+        print("You must specify correct root directory url")
+
     result = client.get('http://localhost:5000/')
     get_content = result.content.decode('utf-8').strip('"')
 
@@ -34,7 +40,11 @@ def test_inference_csv():
     Test batch inference path
     """
     csv_file = {'csv_file': open(CSV_SAMPLE_PATH, 'rb')}
-    result = client.post('http://localhost:5000/batch_inference', files=csv_file)
+
+    try:
+        result = client.post('http://localhost:5000/batch_inference', files=csv_file)
+    except TypeError:
+        print("You must specify correct endpoint url")
 
     assert result.json()['error'] is None
     assert result.status_code == 200
@@ -45,9 +55,13 @@ def test_inference_json():
     Test inference path
     """
     headers = {'Content-Type': 'application/json'}
-    result = client.post('http://localhost:5000/stream_inference',
+
+    try:
+        result = client.post('http://localhost:5000/stream_inference',
                     json=json.load(open(JSON_SAMPLE_PATH, 'r')),
                     headers=headers)
+    except TypeError:
+        print("You must specify correct endpoint url")
 
     assert result.json()['error'] is None
     assert result.status_code == 200

@@ -6,6 +6,7 @@ Date   : August 2021
 """
 import os
 import json
+from joblib import dump
 import logging
 import yaml
 
@@ -13,7 +14,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 
 from ml.model import train_model, compute_model_metrics, \
-    inference, save_artifact, compute_slice_metrics
+    inference, compute_slice_metrics
 from ml.data import process_data, preprocess_data
 
 CWD = os.getcwd()
@@ -98,12 +99,13 @@ MODEL_DIR = os.path.join(
 
 MODEL_DEST_PATH = os.path.join(MODEL_DIR, CONFIG['model_output'])
 
-save_artifact(MODEL, MODEL_DEST_PATH)
-save_artifact(ENCODER, os.path.join(MODEL_DIR, CONFIG['encoder_output']))
-save_artifact(LABEL, os.path.join(MODEL_DIR, CONFIG['label_binarizer_output']))
+dump(MODEL, MODEL_DEST_PATH)
+dump(ENCODER, os.path.join(MODEL_DIR, CONFIG['encoder_output']))
+dump(LABEL, os.path.join(MODEL_DIR, CONFIG['label_binarizer_output']))
 
 for elem in CAT_FEATURES:
-    slice_metrics = compute_slice_metrics(PREPROCESSED_DF, elem)
+    slice_metrics = compute_slice_metrics(PREPROCESSED_DF, elem,
+                            MODEL, ENCODER, LABEL)
 
     SLICE_LOGGER.info("`%s` category", elem)
     for feature_val, metrics in slice_metrics.items():
