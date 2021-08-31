@@ -109,8 +109,8 @@ def test_binarizer_artifact(binarizer):
 def test_encoder_artifact(encoder):
     assert isinstance(encoder, OneHotEncoder)
 
-def test_compute_slice_metrics(df, random_forest, encoder, binarizer, categorical):
-    SLICES = categorical
+def test_compute_slice_metrics(df, random_forest, encoder, binarizer):
+    SLICES = ['education', 'race', 'sex']
     for elem in SLICES:
         predictions = compute_slice_metrics(df, elem, random_forest,
                         encoder, binarizer)
