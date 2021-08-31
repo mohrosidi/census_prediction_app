@@ -1,5 +1,6 @@
 import os
 from joblib import load
+import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.preprocessing import LabelBinarizer, OneHotEncoder
 from pydantic import BaseModel

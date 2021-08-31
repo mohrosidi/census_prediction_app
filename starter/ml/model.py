@@ -14,55 +14,6 @@ from typing import List
 
 from .data import process_data
 
-class RFClassifier:
-    """
-    Random forest classifier model.
-    """
-    def __init__(
-            self,
-            model: RandomForestClassifier = None,
-            binarizer: LabelBinarizer = None,
-            encoder: OneHotEncoder = None,
-            config_path: str = None):
-        
-        import yaml
-
-        config_path = config_path if config_path else os.path.join(
-            os.getcwd(),
-            "starter", 
-            "params.yaml"
-            )
-
-        with open(config_path, 'r') as fp:
-            CONFIG = yaml.safe_load(fp)
-
-        self.model =  model if model else load(os.path.join(
-            os.getcwd(),
-            "model", 
-            CONFIG['model_output']
-            )
-        )
-        self.binarizer = binarizer if binarizer else load(os.path.join(
-            os.getcwd(),
-            "model", 
-            CONFIG['label_binarizer_output']
-            )
-        )
-        self.encoder = encoder if encoder else load(os.path.join(
-            os.getcwd(),
-            "model", 
-            CONFIG['encoder_output']
-            )
-        )
-
-        self.CAT_FEATURES = CONFIG['categorical_features']
-
-    def inference(self, X: np.array) -> List:
-        preds = self.model.predict(X)
-        predicted_labels = self.binarizer.inverse_transform(preds)
-        return list(predicted_labels)
-        
-
 def train_model(X_train, y_train, model_params):
     """
     Trains a machine learning model and returns it.
