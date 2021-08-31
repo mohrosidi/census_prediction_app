@@ -116,6 +116,10 @@ def test_compute_slice_metrics(df, random_forest, encoder, binarizer, categorica
                         encoder, binarizer)
         for feature, metrics in predictions.items():
             assert isinstance(feature, str)
-            assert isinstance(metrics['precision'], float)
-            assert isinstance(metrics['recall'], float)
-            assert isinstance(metrics['fbeta'], float)
+            assert isinstance(
+                metrics['precision'],
+                float) and isinstance(
+                metrics['recall'],
+                float) and isinstance(
+                metrics['fbeta'],
+                float)
