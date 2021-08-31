@@ -54,6 +54,9 @@ def binarizer():
 def encoder():
     return load(ENCODER_PATH)
 
+@pytest.fixture
+def categorical():
+    return CONFIG['categorical_features']
 
 @pytest.fixture(scope='function')
 def df():
@@ -62,33 +65,33 @@ def df():
     dataframe = pd.read_csv(DATA_PATH)
     return dataframe
 
-def test_process_data(encoder, binarizer, df):
+def test_process_data(encoder, binarizer, df, categorical):
     X, y, _, _ = process_data(df,
-                              categorical_features=CONFIG['categorical_features'],
+                              categorical_features=categorical,
                               label='salary', training=False, encoder=encoder,
                               lb=binarizer)
     assert isinstance(X, np.ndarray)
     assert len(X) > 0
     assert isinstance(y, np.ndarray)
 
-def test_encoder_artifact(encoder, binarizer, df):
+def test_encoder_artifact(encoder, binarizer, df, categorical):
     _, _, encoder, lb = process_data(df,
-                              categorical_features=CONFIG['categorical_features'],
+                              categorical_features=categorical,
                               label='salary', training=True)
     assert isinstance(lb, LabelBinarizer)
     assert isinstance(encoder, OneHotEncoder)
 
-def test_train(df):
+def test_train(df, categorical):
     X, y, _, _ = process_data(df,
-                              categorical_features=CONFIG['categorical_features'],
-                              label='salary', training=False, encoder=encoder,
+                              categorical_features=categorical,
+                              label='salary', training=True, encoder=encoder,
                               lb=binarizer)
     model = train_model(X,y, MODEL_PARAMS)
     assert isinstance(model, RandomForestClassifier)
 
-def test_inference(random_forest, encoder, binarizer, df):
+def test_inference(random_forest, encoder, binarizer, df, categorical):
     X, y, _, _ = process_data(df,
-                              categorical_features=CONFIG['categorical_features'],
+                              categorical_features=categorical,
                               label='salary', training=False, encoder=encoder,
                               lb=binarizer)
 
