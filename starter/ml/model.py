@@ -10,7 +10,6 @@ import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import fbeta_score, precision_score, recall_score
 from sklearn.preprocessing import LabelBinarizer, OneHotEncoder
-from typing import List
 
 from .data import process_data
 
