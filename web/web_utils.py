@@ -1,5 +1,7 @@
 import os
 from joblib import load
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.preprocessing import LabelBinarizer, OneHotEncoder
 from pydantic import BaseModel
 
 class RFClassifier:
