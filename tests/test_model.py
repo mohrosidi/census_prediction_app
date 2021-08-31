@@ -11,7 +11,7 @@ from sklearn.preprocessing import LabelBinarizer, OneHotEncoder
 from sklearn.ensemble import RandomForestClassifier
 
 from starter.ml.data import process_data
-from starter.ml.model import load_artifact, compute_slice_metrics, \
+from starter.ml.model import compute_slice_metrics, \
     inference, RFClassifier, train_model
 
 CWD = os.getcwd()
