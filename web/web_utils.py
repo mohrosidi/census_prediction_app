@@ -48,7 +48,7 @@ class RFClassifier:
 
         self.CAT_FEATURES = CONFIG['categorical_features']
 
-    def inference(self, X: np.array) -> List:
+    def inference(self, X: np.array):
         preds = self.model.predict(X)
         predicted_labels = self.binarizer.inverse_transform(preds)
         return list(predicted_labels)
